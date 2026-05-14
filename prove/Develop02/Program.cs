@@ -9,6 +9,8 @@ class Program
 
         string userChoice = "";
 
+        //To exceed the requirements, I made it where the program asks the user for their mood, and records that in the journal entry as well.
+
         while (userChoice != "5")
         {
             Console.WriteLine("Please select one of the following choices:");
@@ -29,12 +31,16 @@ class Program
                 Console.Write("> ");
                 string response = Console.ReadLine();
 
+                Console.WriteLine("What is your current mood? ");
+                string mood = Console.ReadLine();
+
                 string date = DateTime.Now.ToShortDateString();
 
                 Entry newEntry = new Entry();
                 newEntry._date = date;
                 newEntry._promptText = prompt;
                 newEntry._entryText = response;
+                newEntry._mood = mood;
 
                 myJournal.AddEntry(newEntry);
             }
