@@ -1,16 +1,16 @@
 public class Entry
 {
-    public string _date;
-    public string _promptText;
-    public string _entryText;
+    public string lb_date;
+    public string lb_promptText;
+    public string lb_entryText;
 
-    public string _mood;
+    public string lb_mood;
 
     public void Display()
     {
-        Console.WriteLine($"Date: {_date} - Mood: {_mood}");
-        Console.WriteLine($"Prompt: {_promptText}");
-        Console.WriteLine(_entryText);
+        Console.WriteLine($"Date: {lb_date} - Mood: {lb_mood}");
+        Console.WriteLine($"Prompt: {lb_promptText}");
+        Console.WriteLine(lb_entryText);
         Console.WriteLine();
     }
 }

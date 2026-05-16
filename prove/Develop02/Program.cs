@@ -37,10 +37,10 @@ class Program
                 string date = DateTime.Now.ToShortDateString();
 
                 Entry newEntry = new Entry();
-                newEntry._date = date;
-                newEntry._promptText = prompt;
-                newEntry._entryText = response;
-                newEntry._mood = mood;
+                newEntry.lb_date = date;
+                newEntry.lb_promptText = prompt;
+                newEntry.lb_entryText = response;
+                newEntry.lb_mood = mood;
 
                 myJournal.AddEntry(newEntry);
             }

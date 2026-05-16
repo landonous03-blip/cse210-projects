@@ -1,26 +1,26 @@
 using System.IO;
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
+    public List<Entry> lb_entries = new List<Entry>();
     public void AddEntry(Entry newEntry)
     {
-        _entries.Add(newEntry);
+        lb_entries.Add(newEntry);
     }
 
     public void SaveToFile(string file)
     {
         using (StreamWriter outputFile = new StreamWriter(file))
         {
-            foreach (Entry entry in _entries)
+            foreach (Entry entry in lb_entries)
             {
-                outputFile.WriteLine($"{entry._date}~|~{entry._promptText}~|~{entry._entryText}~|~{entry._mood}");
+                outputFile.WriteLine($"{entry.lb_date}~|~{entry.lb_promptText}~|~{entry.lb_entryText}~|~{entry.lb_mood}");
             }
         }
     }
 
     public void LoadFromFile(string file)
     {
-        _entries.Clear();
+        lb_entries.Clear();
 
         string[] lines = System.IO.File.ReadAllLines(file);
 
@@ -30,18 +30,18 @@ public class Journal
 
 
             Entry newEntry = new Entry();
-            newEntry._date = parts[0];
-            newEntry._promptText = parts[1];
-            newEntry._entryText = parts[2];
-            newEntry._mood = parts[3];
+            newEntry.lb_date = parts[0];
+            newEntry.lb_promptText = parts[1];
+            newEntry.lb_entryText = parts[2];
+            newEntry.lb_mood = parts[3];
 
-            _entries.Add(newEntry);
+            lb_entries.Add(newEntry);
         }
     }
 
     public void DisplayAll()
     {
-        foreach (Entry entry in _entries)
+        foreach (Entry entry in lb_entries)
         {
             entry.Display();
         }
